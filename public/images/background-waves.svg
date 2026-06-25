@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="none">
+  <!-- Base Cream -->
+  <rect width="1440" height="900" fill="#FAF5EC"/>
+  
+  <!-- Wave 1: Soft Gold-Cream -->
+  <path d="M0,250 C360,190 720,340 1080,260 C1260,220 1380,150 1440,110 L1440,900 L0,900 Z" fill="#F5E9D6" opacity="0.9"/>
+  
+  <!-- Wave 2: Muted Gold/Ivory -->
+  <path d="M0,380 C360,320 720,470 1080,390 C1260,350 1380,270 1440,230 L1440,900 L0,900 Z" fill="#EADBC1" opacity="0.8"/>
+  
+  <!-- Wave 3: Soft Maroon Blush -->
+  <path d="M0,500 C360,450 720,580 1080,520 C1260,490 1380,410 1440,370 L1440,900 L0,900 Z" fill="#B76E79" opacity="0.4"/>
+  
+  <!-- Wave 4: Burnt Red Light -->
+  <path d="M0,620 C360,580 720,680 1080,630 C1260,610 1380,540 1440,500 L1440,900 L0,900 Z" fill="#8B2F1F" opacity="0.45"/>
+  
+  <!-- Wave 5: Primary Royal Maroon -->
+  <path d="M0,740 C360,710 720,780 1080,750 C1260,740 1380,680 1440,640 L1440,900 L0,900 Z" fill="#6B1D1B" opacity="0.85"/>
+  
+  <!-- Wave 6: Deepest Maroon -->
+  <path d="M0,840 C360,820 720,850 1080,840 C1260,830 1380,790 1440,760 L1440,900 L0,900 Z" fill="#4A1412"/>
+</svg>

@@ -1,0 +1,117 @@
+.section {
+  padding: 60px 20px;
+  background-color: transparent;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.timelineList {
+  position: relative;
+  padding-left: 55px;
+  margin-top: 35px;
+}
+
+/* Vertical Gold Dashed Line */
+.verticalLine {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  border-left: 1px dashed var(--primary-champagne-gold);
+}
+
+.timelineItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.timelineItem:last-child {
+  margin-bottom: 0;
+}
+
+/* Rounded image container like a mini photo card */
+.imageContainer {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 4px 10px rgba(74, 64, 54, 0.1);
+  flex-shrink: 0;
+  margin-right: 20px;
+  background: var(--bg-champagne-cream);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.timelineItem:hover .image {
+  transform: scale(1.06);
+}
+
+.imageBorder {
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 9px;
+  pointer-events: none;
+}
+
+/* Details text content */
+.details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.title {
+  font-family: var(--font-serif-primary);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--primary-maroon);
+  font-weight: 700;
+  margin: 0 0 2px 0;
+}
+
+.date {
+  font-family: var(--font-serif-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-warm-brown);
+  margin-bottom: 4px;
+}
+
+.desc {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--text-dark-taupe);
+  margin: 0;
+  line-height: 1.35;
+  opacity: 0.85;
+}
+
+/* Connector Dot on the vertical line */
+.dot {
+  position: absolute;
+  left: -35px; /* Centers exactly on the vertical line (55px padding - 35px = 20px left) */
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--primary-maroon);
+  border: 2px solid var(--primary-champagne-gold);
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.4);
+  z-index: 2;
+}

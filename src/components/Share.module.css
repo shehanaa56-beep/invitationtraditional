@@ -1,0 +1,68 @@
+.section {
+  padding: 60px 20px;
+  background-color: transparent;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: 5px;
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--text-dark-taupe);
+  margin-bottom: 25px;
+  max-width: 280px;
+  opacity: 0.85;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+}
+
+/* Circular share buttons */
+.shareCircle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #8B2F1F 0%, #6B1D1B 80%);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  color: #FAF5EC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(107, 29, 27, 0.25);
+  transition: var(--transition-smooth);
+}
+
+.shareCircle:hover {
+  background: #8b2f1f;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(107, 29, 27, 0.35);
+}
+
+/* Link copied state */
+.copied {
+  background: var(--gold-gradient);
+  border-color: #FAF5EC;
+  color: var(--primary-maroon);
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 45px 20px;
+  }
+}

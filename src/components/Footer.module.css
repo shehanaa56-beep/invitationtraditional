@@ -1,0 +1,53 @@
+.footer {
+  background-color: var(--primary-maroon);
+  padding: 60px 20px 40px;
+  text-align: center;
+  border-top: 1px solid rgba(212, 175, 55, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "✿";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary-maroon);
+  padding: 0 15px;
+  color: var(--primary-champagne-gold);
+  font-size: 1.1rem;
+}
+
+.blessing {
+  font-family: var(--font-devanagari-serif);
+  font-size: 0.82rem;
+  color: #FAF5EC;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.names {
+  font-family: var(--font-cursive);
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  color: var(--primary-champagne-gold);
+  margin: 0 0 10px;
+}
+
+.date {
+  font-family: var(--font-serif-primary);
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  color: #FAF5EC;
+  margin: 0 0 20px;
+  opacity: 0.9;
+}
+
+.made {
+  font-family: var(--font-serif-secondary);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--primary-champagne-gold);
+  opacity: 0.7;
+  margin: 0;
+}

@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Mukta:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Noto+Serif+Malayalam:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Color Palette - Traditional Hindu Royal */
+  --bg-pearl-white: #FAF5EC;
+  --bg-champagne-cream: #F5E9D6;
+  --bg-soft-ivory: #EADBC1;
+
+  --primary-maroon: #6B1D1B;
+  --primary-burnt-red: #8B2F1F;
+  --primary-champagne-gold: #D4AF37;
+  --primary-muted-gold: #CBA135;
+  --primary-rose-gold: #B76E79;
+
+  --text-dark-taupe: #4A2C17;
+  --text-warm-brown: #361C0D;
+  --text-soft-gold: #D4AF37;
+
+  --accent-luxury-beige: #D5C7A3;
+  --accent-royal-sand: #C2B280;
+
+  --gold-gradient: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA8A24 100%);
+  --gold-gradient-dark: linear-gradient(135deg, #CBA135 0%, #9E7D3F 50%, #684F1D 100%);
+  --maroon-gradient: linear-gradient(135deg, #8B2F1F 0%, #6B1D1B 50%, #4A1412 100%);
+
+  /* Fonts */
+  --font-cursive: 'Great Vibes', cursive;
+  --font-serif-primary: 'Cinzel', serif;
+  --font-serif-secondary: 'Playfair Display', serif;
+  --font-body: 'Lora', serif;
+  --font-devanagari: 'Noto Serif Malayalam', 'Mukta', sans-serif;
+  --font-devanagari-serif: 'Noto Serif Malayalam', 'Noto Serif Devanagari', serif;
+
+  /* Shadows */
+  --shadow-light: 0 10px 30px rgba(74, 64, 54, 0.08);
+  --shadow-medium: 0 15px 40px rgba(74, 64, 54, 0.15);
+  --shadow-gold: 0 4px 15px rgba(212, 175, 55, 0.25);
+  --shadow-gold-glow: 0 0 20px rgba(212, 175, 55, 0.4);
+  --shadow-wax: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.3);
+
+  /* Borders */
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 24px;
+
+  /* Animations */
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  /* Royal Rajasthani Arches Background with soft cream parchment overlay */
+  background-image:
+    linear-gradient(to bottom, rgba(250, 245, 236, 0.45), rgba(250, 245, 236, 0.45)),
+    url('/images/tt (2).jpeg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--text-dark-taupe);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Luxury Paper Texture Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 430px;
+  /* Mobile first strict container */
+  margin: 0 auto;
+  background: transparent;
+  position: relative;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Double-lined Royal Gold Invitation Frame */
+.gold-frame {
+  position: fixed;
+  top: 10px;
+  bottom: 10px;
+  left: calc(50% - 205px);
+  width: 410px;
+  border: 1px solid var(--primary-champagne-gold);
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: 99;
+}
+
+.gold-frame::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 0.5px solid rgba(212, 175, 55, 0.4);
+  border-radius: 9px;
+}
+
+.frame-corner {
+  position: absolute;
+  color: var(--primary-champagne-gold);
+  font-size: 11px;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.top-left {
+  top: 6px;
+  left: 6px;
+}
+
+.top-right {
+  top: 6px;
+  right: 6px;
+}
+
+.bottom-left {
+  bottom: 6px;
+  left: 6px;
+}
+
+.bottom-right {
+  bottom: 6px;
+  right: 6px;
+}
+
+@media (max-width: 430px) {
+  .gold-frame {
+    left: 10px;
+    right: 10px;
+    width: auto;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-pearl-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-muted-gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-champagne-gold);
+}
+
+/* Typography styles */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif-primary);
+  font-weight: 500;
+}
+
+/* Common text patterns */
+.cursive-title {
+  font-family: var(--font-cursive);
+  font-size: 3.5rem;
+  color: var(--primary-muted-gold);
+  line-height: 1;
+}
+
+.section-subtitle {
+  font-family: var(--font-serif-secondary);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: var(--primary-muted-gold);
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.section-title {
+  font-family: var(--font-serif-secondary);
+  font-style: italic;
+  font-size: 2.1rem;
+  color: var(--text-warm-brown);
+  text-align: center;
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.7rem;
+  }
+}
+
+/* Gold Separator */
+.gold-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px auto 20px;
+  width: 100%;
+}
+
+.gold-separator::before,
+.gold-separator::after {
+  content: "";
+  height: 1px;
+  width: 30px;
+  background: var(--primary-muted-gold);
+}
+
+.gold-separator::before {
+  margin-right: 8px;
+}
+
+.gold-separator::after {
+  margin-left: 8px;
+}
+
+.gold-separator-icon {
+  color: var(--primary-muted-gold);
+  font-size: 8px;
+  display: inline-block;
+  transform: rotate(45deg);
+}
+
+/* Buttons */
+.btn-gold {
+  background: var(--maroon-gradient);
+  border: 1px solid var(--primary-champagne-gold);
+  color: #fff;
+  padding: 12px 28px;
+  font-family: var(--font-serif-primary);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(107, 29, 27, 0.25);
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(107, 29, 27, 0.4);
+  filter: brightness(1.15);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  border: 1px solid var(--primary-maroon);
+  color: var(--primary-maroon);
+  padding: 12px 28px;
+  font-family: var(--font-serif-primary);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-outline-gold:hover {
+  background: var(--maroon-gradient);
+  border-color: var(--primary-champagne-gold);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(107, 29, 27, 0.3);
+}
+
+/* Card base */
+.luxury-card {
+  background: var(--bg-soft-ivory);
+  border-radius: var(--border-radius-sm);
+  padding: 30px;
+  box-shadow: var(--shadow-light);
+  border: 1px solid rgba(203, 161, 53, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.luxury-card::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  border: 1px solid rgba(203, 161, 53, 0.15);
+  border-radius: calc(var(--border-radius-sm) - 4px);
+  pointer-events: none;
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Gold Text Effect */
+.gold-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Make all content sections transparent to show the beautiful background arches */
+#root section,
+#root div[class*="section"],
+#root div[class*="hero"],
+#root div[class*="events"],
+#root div[class*="family"],
+#root div[class*="timeline"],
+#root div[class*="venue"],
+#root div[class*="rsvp"],
+#root div[class*="gallery"],
+#root div[class*="wishes"] {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* Custom Background for Countdown Section */
+#root #countdown {
+  background-color: transparent !important;
+  background: transparent !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  position: relative;
+  z-index: 5;
+  padding: 40px 15px 10px !important;
+}
+
+/* High-contrast visibility adjustments on transparent arches background */
+#root #countdown .title {
+  font-family: var(--font-serif-secondary) !important;
+  font-size: 2.1rem !important;
+  color: var(--primary-maroon) !important;
+  -webkit-text-fill-color: var(--primary-maroon) !important;
+  text-shadow:
+    -2px -2px 0 #FAF5EC,
+    2px -2px 0 #FAF5EC,
+    -2px 2px 0 #FAF5EC,
+    2px 2px 0 #FAF5EC,
+    0px 0px 8px rgba(250, 245, 236, 0.9),
+    0px 0px 15px rgba(250, 245, 236, 0.9) !important;
+  margin-bottom: 5px !important;
+  font-weight: 700 !important;
+}
+
+#root #countdown p {
+  color: var(--primary-maroon) !important;
+  font-family: var(--font-serif-primary) !important;
+  font-weight: 700 !important;
+  letter-spacing: 4px !important;
+  text-transform: uppercase !important;
+  font-size: 0.78rem !important;
+  opacity: 1 !important;
+  text-shadow:
+    -1.5px -1.5px 0 #FAF5EC,
+    1.5px -1.5px 0 #FAF5EC,
+    -1.5px 1.5px 0 #FAF5EC,
+    1.5px 1.5px 0 #FAF5EC,
+    0px 0px 8px rgba(250, 245, 236, 0.9) !important;
+}
+
+/* Parchment Card Utility Style */
+.parchment-card {
+  padding: 25px 20px;
+  background-color: rgba(250, 245, 236, 0.88) !important;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E") !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06) !important;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  margin: 15px auto;
+}
+
+/* Inner gold dashed border for vintage card look */
+.parchment-card::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px dashed rgba(212, 175, 55, 0.22);
+  border-radius: 8px;
+  pointer-events: none;
+}

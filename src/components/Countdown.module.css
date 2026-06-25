@@ -1,0 +1,99 @@
+.section {
+  padding: 60px 15px 40px;
+  background-color: transparent;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.title {
+  color: var(--text-dark-taupe);
+  margin-bottom: 5px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  z-index: 10;
+  width: 100%;
+  max-width: 360px;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+
+.card {
+  flex: 1;
+  max-width: 76px;
+  aspect-ratio: 1 / 1.15;
+  background: radial-gradient(circle at center, #8B2F1F 0%, #6B1D1B 80%);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  min-width: 58px;
+}
+
+/* Inner gold outline */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+.value {
+  font-family: var(--font-serif-primary);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #FAF5EC;
+  line-height: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 4px;
+}
+
+.label {
+  font-family: var(--font-serif-primary);
+  font-size: 0.5rem;
+  letter-spacing: 1.5px;
+  color: var(--primary-champagne-gold);
+  font-weight: 600;
+}
+
+.templeWrapper {
+  width: 130px;
+  height: auto;
+  opacity: 0.25;
+  margin-top: 5px;
+  filter: drop-shadow(0 2px 5px rgba(212, 175, 55, 0.1));
+}
+
+@media (min-width: 385px) {
+  .cards {
+    gap: 12px;
+  }
+  .card {
+    max-width: 80px;
+  }
+  .value {
+    font-size: 1.9rem;
+  }
+  .label {
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+  }
+}

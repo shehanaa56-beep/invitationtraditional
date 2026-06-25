@@ -1,0 +1,298 @@
+.wrapper {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.splitEnvelope {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+/* Left Panel - Cream/Beige */
+.leftPanel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #FAF5EC;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+  border-right: 1px solid rgba(212, 175, 55, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align content towards split line */
+  padding-right: 10%;
+  box-sizing: border-box;
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+}
+
+.leftBorder {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  border: 1px dashed rgba(212, 175, 55, 0.3);
+  pointer-events: none;
+}
+
+.crestContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  max-width: 90%;
+  margin-right: -40px; /* Overlap slightly with split line for beautiful nesting */
+  z-index: 10;
+  text-align: center;
+}
+
+.wreathCrest {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.wreathSvg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 2px 5px rgba(186, 142, 35, 0.2));
+}
+
+.initials {
+  position: absolute;
+  font-family: var(--font-serif-primary);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--primary-maroon);
+  letter-spacing: 2px;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.invitedText {
+  font-family: var(--font-serif-secondary);
+  font-size: 1.05rem;
+  letter-spacing: 6px;
+  color: var(--text-dark-taupe);
+  margin: 60px 0 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.separatorLine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  margin-top: 5px;
+}
+
+.lineLeft, .lineRight {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #D4AF37);
+}
+
+.lineRight {
+  background: linear-gradient(to left, transparent, #D4AF37);
+}
+
+.diamond {
+  color: #D4AF37;
+  font-size: 10px;
+  margin: 0 8px;
+}
+
+/* Right Panel - Maroon */
+.rightPanel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: var(--primary-maroon);
+  background-image: 
+    radial-gradient(circle at center, rgba(139, 47, 31, 0.45) 0%, rgba(107, 29, 27, 0.75) 60%, rgba(58, 15, 14, 0.95) 100%),
+    url('/images/tt (1).jpeg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  z-index: 4;
+}
+
+.floralCornerTR {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 150px;
+  height: 150px;
+  opacity: 0.65;
+}
+
+.floralCornerBR {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 150px;
+  height: 150px;
+  opacity: 0.65;
+}
+
+/* Central Wax Seal */
+.sealWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+.sealCircle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #8B2F1F, #6B1D1B 65%, #300C0B);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.55), 
+    0 0 30px rgba(212, 175, 55, 0.25),
+    inset 0 2px 4px rgba(255, 255, 255, 0.45), 
+    inset 0 -4px 6px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sealCircle:hover {
+  transform: scale(1.08);
+  box-shadow: 
+    0 12px 30px rgba(0, 0, 0, 0.6), 
+    0 0 40px rgba(212, 175, 55, 0.45),
+    inset 0 2px 4px rgba(255, 255, 255, 0.45), 
+    inset 0 -4px 6px rgba(0, 0, 0, 0.6);
+}
+
+.sealMonogram {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sealWreathSvg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+}
+
+.sealInitials {
+  position: absolute;
+  font-family: var(--font-serif-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #D4AF37;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.sealBreaking {
+  animation: shake 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes shake {
+  0% { transform: translate(-50%, -50%) rotate(-3deg) scale(1.05); }
+  100% { transform: translate(-50%, -50%) rotate(3deg) scale(1.05); }
+}
+
+/* Tap to Open Hint */
+.tapHint {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 150;
+  pointer-events: none;
+}
+
+.tapText {
+  font-family: var(--font-serif-secondary);
+  font-size: 0.75rem;
+  letter-spacing: 5px;
+  color: var(--primary-champagne-gold);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+  margin-bottom: 8px;
+  white-space: nowrap;
+}
+
+.chevron {
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .leftPanel {
+    justify-content: flex-end;
+    padding-right: 5%;
+  }
+  
+  .crestContainer {
+    margin-right: -30px;
+    max-width: 95%;
+  }
+
+  .wreathCrest {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+  }
+
+  .initials {
+    font-size: 1.25rem;
+  }
+
+  .invitedText {
+    font-size: 0.82rem;
+    letter-spacing: 3px;
+    margin: 50px 0 5px;
+  }
+
+  .separatorLine {
+    width: 110px;
+  }
+
+  .sealCircle {
+    width: 68px;
+    height: 68px;
+  }
+
+  .tapText {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+  }
+}
