@@ -27,8 +27,8 @@
   border-right: 1px solid rgba(212, 175, 55, 0.4);
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Align content towards split line */
-  padding-right: 10%;
+  justify-content: center; /* Center content in the left panel */
+  padding-right: 0;
   box-sizing: border-box;
   box-shadow: 10px 0 30px rgba(0, 0, 0, 0.15);
   z-index: 5;
@@ -51,9 +51,10 @@
   justify-content: center;
   width: 280px;
   max-width: 90%;
-  margin-right: -40px; /* Overlap slightly with split line for beautiful nesting */
+  margin-right: 0; /* Centered in left panel */
   z-index: 10;
   text-align: center;
+  transform: translateY(-80px); /* Move up to avoid wax seal */
 }
 
 .wreathCrest {
@@ -87,7 +88,7 @@
   font-size: 1.05rem;
   letter-spacing: 6px;
   color: var(--text-dark-taupe);
-  margin: 60px 0 5px;
+  margin: 0 0 5px;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -257,13 +258,14 @@
 /* Mobile responsive styles */
 @media (max-width: 768px) {
   .leftPanel {
-    justify-content: flex-end;
-    padding-right: 5%;
+    justify-content: center;
+    padding-right: 0;
   }
   
   .crestContainer {
-    margin-right: -30px;
+    margin-right: 0;
     max-width: 95%;
+    transform: translateY(-60px);
   }
 
   .wreathCrest {
@@ -279,7 +281,7 @@
   .invitedText {
     font-size: 0.82rem;
     letter-spacing: 3px;
-    margin: 50px 0 5px;
+    margin: 0 0 5px;
   }
 
   .separatorLine {
