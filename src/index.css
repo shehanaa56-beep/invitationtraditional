@@ -355,7 +355,7 @@ h4 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
+  /* text-fill-color is non-standard; -webkit-text-fill-color above covers all browsers */
 }
 
 /* Make all content sections transparent to show the beautiful background arches */
