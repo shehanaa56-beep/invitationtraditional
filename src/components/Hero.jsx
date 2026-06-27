@@ -42,10 +42,6 @@ export default function Hero({ settings, guestName }) {
           animate="visible"
           custom={0.2}
         >
-          {/* Corner floral illustrations */}
-          <img src="/images/flower_corner_top_left.png" alt="" className={styles.flowerTopLeft} />
-          <img src="/images/flower_corner_bottom_right.png" alt="" className={styles.flowerBottomRight} />
-
           {/* Ganesh Silhouette Motif */}
           <div className={styles.ganeshaHeader}>
             <svg className={styles.ganeshaSvg} viewBox="0 0 100 100" fill="none" stroke="#D4AF37" strokeWidth="2.5">
@@ -86,6 +82,10 @@ export default function Hero({ settings, guestName }) {
             <p className={styles.subDateText}>26 July, 2026</p>
             <p className={styles.shubhVivah}>|| ശുഭ വിവാഹം ||</p>
           </div>
+
+          {/* Corner floral illustrations — rendered last so they paint above all text */}
+          <img src="/images/flower_corner_top_left.png" alt="" className={styles.flowerTopLeft} />
+          <img src="/images/flower_corner_bottom_right.png" alt="" className={styles.flowerBottomRight} />
 
         </motion.div>
       </div>
