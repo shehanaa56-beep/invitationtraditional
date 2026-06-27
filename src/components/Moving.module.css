@@ -13,6 +13,7 @@
   display: flex;
   width: max-content;
   animation: scroll 60s linear infinite; /* Smooth slow panning speed */
+  will-change: transform;
 }
 
 /* Pause scroll animation on hover so guests can view the photos */

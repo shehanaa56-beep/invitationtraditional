@@ -19,8 +19,9 @@ export default function FallingPetals() {
   const [petals, setPetals] = useState([]);
 
   useEffect(() => {
-    // Generate 32 randomized petals that loop infinitely via CSS animations
-    const generated = Array.from({ length: 32 }).map((_, i) => ({
+    // Generate 18 randomized petals that loop infinitely via CSS animations
+    // (32 was too many for mid-range mobile GPUs to composite smoothly)
+    const generated = Array.from({ length: 18 }).map((_, i) => ({
       id: i,
       left: Math.random() * 100,
       delay: Math.random() * 10,
